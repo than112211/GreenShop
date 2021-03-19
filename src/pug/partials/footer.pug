@@ -1,0 +1,51 @@
+-var icon = ['<i class="fab fa-facebook-f"></i>','<i class="fab fa-twitter"></i>','<i class="fab fa-google"></i>','<i class="fab fa-instagram"></i>']
+-var intro = 'Green Shop được thành lập từ 8/2010 được sự tin tưởng của khách hàng trong suốt thời gian hoạt động đến nay cửa hàng ngày một phát triển'
+-var customer = ['Thông tin khách hàng','Tài khoản của tôi','Sản phẩm yêu thích','Lịch sử mua hàng','Chính sách đổi trả','Góp ý,kiếu nại']
+-var service = ['Hỗ trợ dịch vụ','Hệ thống cửa hàng','Hướng dẫn mua hàng','Hướng dẫn thanh toán','Tích điểm đổi quà','Câu hỏi thường gặp']
+-var policy = ['Chính sách ưu đãi','Chính sách giao hàng','Chính sách đổi trả sản phẩm','Chính sách bảo hành','Giới thiệu sản phẩm mới','Chính sách trả góp']
+-var news = ['Tin tức','Tin mới','Khuyễn mãi','Tuyển dụng','Tải về','Tags']
+-var total_list = [customer,service,policy,news]
+-var footer__bottom_left = ['Sitemap','Danh mục sản phẩm','Hợp tác','Thông tin liên hệ','Câu hỏi thường gặp']
+-var footer__bottom_right = ['<i class="fab fa-cc-visa"></i>','<i class="fab fa-cc-paypal"></i>','<i class="fas fa-address-card"></i>']
+
+    mixin footer(data)
+        .footer__list
+            h1= data[0]
+            ul 
+                -for(let i=1 ; i<data.length ; i++)
+                    li
+                        <i class="fas fa-chevron-right"></i>
+                        = data[i]
+
+    .footer__top 
+        .footer__top-contact
+            h1 Kênh thông tin của chúng tôi
+            .contact__icon 
+                each item in icon 
+                    !=item
+        h1  Đăng kí nhận khuyến mãi từ chúng tôi
+        .footer__top-email
+            input(type="text" placeholder="Nhập email...")
+            <i class="fas fa-paper-plane"></i>
+    .footer__center 
+        .info__left 
+            h1 Green Shop
+            h2 Món quà từ thiên nhiên
+            p= intro
+            .contact 
+                .contact__mobile
+                    <i class="fas fa-mobile-alt"></i>Điện thoại: (84-4) 66.558.868
+                .contact__email 
+                    <i class="fas fa-envelope"></i>Email: info@dkt.com.vn
+
+        .info__right
+            each item1 in total_list 
+                +footer(item1)
+
+    .footer__bottom 
+        ul 
+            each item in footer__bottom_left 
+                li= item 
+        ul 
+            each item in footer__bottom_right 
+                li!= item

@@ -26,3 +26,8 @@
   color: black;
   cursor: none;
 }
+@mixin size-color-text-footer(){
+    font-size: $text-size-min;
+    color: $color-text-white;
+    opacity: .6;
+}
