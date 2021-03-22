@@ -1,0 +1,49 @@
+-var icon = ['<i class="fab fa-facebook-f"></i>','<i class="fab fa-twitter"></i>','<i class="fab fa-google"></i>','<i class="fab fa-instagram"></i>']
+-var menu = ['Trang chủ','Giới thiệu','Sản phẩm','Sản phẩm mới','Tin tức','Liên hệ']
+
+.header__top
+    .container.header-info
+        ul
+            li
+                a(href="") 
+                    <i class="far fa-clock"></i>Open time : 8:00 - 18:00 Monday-Sunday
+        ul
+            each item in icon 
+                li
+                    a(href="")!=item                
+        ul
+            li
+                a(href="") 
+                    <i class="fas fa-user-edit"></i>Đăng kí
+            li
+                a(href="")
+                    <i class="fas fa-user"></i>Đăng nhập
+
+.header__center
+    .container.header-greenshop 
+        .greenshop__left 
+            .greenshop__left-title 
+                h1 Green  Shop 
+                h3 Món quà từ thiên nhiên
+            .greenshop__left-img 
+                img(src="./assets/img/logo.png", alt="") 
+        .greenshop__right 
+            .greenshop__search 
+                h2 Hỗ trợ : (04) 6674 2332 - (04) 3786 8904
+                .search__input
+                    input(type="text" placeholder="Tìm kiếm..." )
+                    <i class="fas fa-search"></i>
+            .greenshop__cart 
+                <i class="fas fa-cart-arrow-down"></i>
+                h1 <span>0</span> Sản phẩm
+                    
+.header__bottom
+    .container.bottom__menu 
+        .bottom__menu-icon 
+            a(href="") 
+                <i class="fas fa-bars"></i>
+        .bottom__menu-list 
+            ul
+                each item in menu 
+                    li 
+                        a(href="")= item 
